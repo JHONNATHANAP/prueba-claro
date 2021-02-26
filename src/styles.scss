@@ -1,3 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~@angular/material/prebuilt-themes/indigo-pink";
+$fill-color-primary:#faf5f5 !important;
+$fill-color-secondary:#f8e3e3 !important;
+$fill-color-third:#e5d0d0;
+$fill-active:#ff4848 !important;
+body{
+    background-color:$fill-color-primary
+}
+.card{
+    background-color:$fill-color-secondary ;
+}
+.mat-card {
+    background: transparent;
+}
+.card>.card{
+    background-color:$fill-color-third ;
+}
+.navbar{
+    background-color:$fill-active ;
+}
+.mat-label{
+    color: $fill-active;
+}
+h3{
+    color: $fill-active;
+}
+h4{
+    color: $fill-active;
+}
+h5{
+    color: $fill-active;
+}
+th{
+    color: $fill-active;
+}
+.mat-option-text{
+    color: $fill-active;
+}

@@ -29,24 +29,22 @@
     </div>
 
     <div *ngIf="selected" class="row  text-center" style="padding: 30px;">
-        <div class="col-md-6" style="padding: 0;">
+        <div class="col-md-6" >
             <div class="card mb-4 shadow-sm">
                 <h4 class=" text-center">Caracteristicas</h4>
 
                 <mat-card>
                     <div *ngFor="let car  of selected.versions[0].characteristics">
-                        <mat-list-item>
-                            <h5>{{car.versions[0].name}}</h5>
-                        </mat-list-item>
                         <mat-divider></mat-divider>
+                        <mat-list-item>
+                            <p>{{car.versions[0].name}}</p>
+                        </mat-list-item>
+                    
                     </div>
-
                 </mat-card>
-
             </div>
-
         </div>
-        <div class="col-md-6" style="padding: 0;">
+        <div class="col-md-6" >
             <div class="card mb-4 shadow-sm">
                 <h4 class=" text-center">Precios</h4>
                 <table class="table table-striped">
