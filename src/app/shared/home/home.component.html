@@ -1,0 +1,71 @@
+<main class="container">
+    <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto   card">
+        <h3 class="display-4 text-center">Ofertas</h3>
+        <div class="row">
+            <div class="col-md-3">
+                <mat-form-field appearance="fill">
+                    <mat-label>Elija un producto</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let ofert  of oferts" (click)="onChange(ofert)"
+                            value="{{ofert.versions[0].id}}">{{ofert.versions[0].name}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-card *ngIf="selected">
+                    <mat-list-item>
+                        <h5>id:</h5>
+                        <p>{{selected.versions[0].id}}</p>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <h5>Name:</h5>
+                        <p>{{selected.versions[0].name}}</p>
+                    </mat-list-item>
+                </mat-card>
+            </div>
+
+        </div>
+    </div>
+
+    <div *ngIf="selected" class="row  text-center" style="padding: 30px;">
+        <div class="col-md-6" style="padding: 0;">
+            <div class="card mb-4 shadow-sm">
+                <h4 class=" text-center">Caracteristicas</h4>
+
+                <mat-card>
+                    <div *ngFor="let car  of selected.versions[0].characteristics">
+                        <mat-list-item>
+                            <h5>{{car.versions[0].name}}</h5>
+                        </mat-list-item>
+                        <mat-divider></mat-divider>
+                    </div>
+
+                </mat-card>
+
+            </div>
+
+        </div>
+        <div class="col-md-6" style="padding: 0;">
+            <div class="card mb-4 shadow-sm">
+                <h4 class=" text-center">Precios</h4>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre Precio</th>
+                            <th scope="col">Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let price  of selected.versions[0].productOfferingPrices">
+                            <td>{{price.versions[0].name}}</td>
+                            <td>{{price.versions[0].price.units.name  }}  {{price.versions[0].price.amount  }}  </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</main>
